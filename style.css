@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+.spacer {
+  height: 100vh; /* Creates vertical scroll space */
+}
+
+img.fly-in {
+  width: 300px;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+img.fly-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
