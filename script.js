@@ -1,15 +1,4 @@
-/*const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // Only animate once
-    }
-  });
-});
-
-document.querySelectorAll('.fly-in').forEach(el => observer.observe(el));*/
-
-const reveal_observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
@@ -18,10 +7,10 @@ const reveal_observer = new IntersectionObserver(entries => {
     }
   });
 }, {
-  threshold: 0.6 // Adjust based on how centered you want it to be
+  threshold: 0.5 // Adjust to trigger when the image is roughly centered
 });
 
 document.querySelectorAll('.reveal-container').forEach(container => {
-  reveal_observer.observe(container);
+  observer.observe(container);
 });
 
