@@ -22,10 +22,10 @@ body {
 }
 
 .reveal-image {
-  width: 100vw;
+  width: 100%;
   height: auto;
   max-height: 80vh;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 1s ease, opacity 1s ease;
 }
 
@@ -58,6 +58,7 @@ body {
     width: 60vw;
     height: 100vh;
     max-height: none;
+    object-fit: cover;
   }
 
   .reveal-text {
