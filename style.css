@@ -1,13 +1,35 @@
 body {
-  font-family: sans-serif;
+  font-family: serif;
   text-align: center;
   padding: 2rem;
-  background-color: #6c4577;
-  color: #f3cd6e;
+  background-color: #0a0f1a;
+  color: rgb(245, 226, 122);
+}
+
+hr {
+  border-color: rgb(245, 226, 122);
+}
+
+.gilded-border {
+  border-width: 20px;
+  border-image: url('images/byzantine-horizontal-border.png') 20 repeat;
+  border-style: solid;
+}
+
+.circle-frame {
+  width: 200px;
+  height: 200px;
+  border: 8px solid gold;
+  border-radius: 50%;
+  padding: 10px;
+  background: #0a0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spacer {
-  height: 10vh; /* Creates vertical scroll space */
+  height: 1vh; /* Creates vertical scroll space */
 }
 
 .reveal-container {
@@ -55,8 +77,8 @@ body {
   }
 
   .reveal-image {
-    width: 60vw;
-    height: 100vh;
+    width: 30%;
+    height: 30%;
     max-height: none;
     object-fit: cover;
   }
@@ -67,7 +89,7 @@ body {
   }
 
   .reveal-container.active .reveal-image {
-    transform: translateX(-10%);
+    transform: translateX(30%);
   }
 }
 
