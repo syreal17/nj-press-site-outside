@@ -86,6 +86,7 @@ hr {
   .reveal-text {
     width: 35vw;
     margin-top: 0;
+    font-size: x-large;
   }
 
   .reveal-container.active .reveal-image {

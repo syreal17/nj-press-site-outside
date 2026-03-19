@@ -36,3 +36,32 @@ function scrollToHashTarget() {
 
 window.addEventListener('hashchange', scrollToHashTarget);
 window.addEventListener('load', scrollToHashTarget);
+
+const endlessHoardCopyButton = document.getElementById('eh-copy-btn');
+const endlessHoardStatus = document.getElementById('eh-status');
+
+if (endlessHoardCopyButton && endlessHoardStatus) {
+  endlessHoardCopyButton.addEventListener('click', async () => {
+    endlessHoardStatus.textContent = 'Copying...';
+
+    try {
+      const response = await fetch('prompts/endless-hoard.txt');
+
+      if (!response.ok) {
+        throw new Error(`Failed to load prompt: ${response.status}`);
+      }
+
+      const text = await response.text();
+      await navigator.clipboard.writeText(text);
+
+      endlessHoardStatus.textContent = 'Copied!';
+    } catch (error) {
+      console.error(error);
+      endlessHoardStatus.textContent = 'Unable to copy prompt.';
+    }
+
+    setTimeout(() => {
+      endlessHoardStatus.textContent = '';
+    }, 2000);
+  });
+}
